@@ -1,0 +1,58 @@
+# ============================================
+#  SetSpawnPlus – konfigurace
+#  Změny aplikuj příkazem /ssp reload
+#  Samotné souřadnice spawnů jsou v spawns.yml
+# ============================================
+
+spawn:
+  # Každý svět může mít vlastní spawn (když svět spawn nemá, použije se hlavní)
+  per-world: false
+  # Při /setspawn nastavit i vanilla spawn světa (kompas, /spawnpoint apod.)
+  sync-world-spawn: true
+  # Teleportovat hráče na spawn při KAŽDÉM připojení (ne jen poprvé)
+  teleport-on-join: false
+
+respawn:
+  # Po smrti respawn na spawnu, pokud hráč nemá postel / respawn anchor
+  enabled: true
+  # true = respawn na spawnu i když postel má
+  ignore-bed: false
+  ignore-anchor: false
+
+first-join:
+  # Teleport nových hráčů (kteří na serveru ještě nebyli)
+  enabled: true
+  # Když není nastaven first spawn, použije se normální spawn
+  fallback-to-spawn: true
+  # Příkazy spuštěné z konzole při prvním připojení (%player% = jméno)
+  commands: []
+  #  - "give %player% bread 16"
+  # Zpráva všem při prvním připojení (prázdné = vypnuto)
+  broadcast: "&e%player% &7se na server připojil poprvé! Vítej!"
+
+teleport:
+  # Čekání před teleportem v sekundách (0 = hned)
+  delay: 3
+  # Cooldown mezi teleporty v sekundách (0 = vypnuto)
+  cooldown: 10
+  cancel-on-move: true
+  cancel-on-damage: true
+  # Zvuk po teleportu (prázdné = vypnuto), např. entity.enderman.teleport
+  sound: "entity.enderman.teleport"
+
+messages:
+  prefix: "&8[&bSpawn&8] &7"
+  no-permission: "&cNa to nemáš oprávnění."
+  players-only: "&cTento příkaz lze použít jen ve hře."
+  player-not-found: "&cHráč &f%player% &cnení online."
+  spawn-not-set: "&cSpawn zatím není nastaven."
+  firstspawn-not-set: "&cFirst spawn zatím není nastaven."
+  spawn-set: "&aSpawn byl nastaven."
+  firstspawn-set: "&aFirst spawn byl nastaven."
+  teleporting: "&7Teleport za &b%seconds% &7s. Nehýbej se!"
+  teleported: "&aByl jsi teleportován na spawn."
+  teleported-other: "&aHráč &f%player% &abyl teleportován na spawn."
+  teleport-cancelled: "&cTeleport zrušen."
+  cooldown: "&cPočkej ještě &f%seconds% &cs."
+  reloaded: "&aKonfigurace a spawny byly znovu načteny."
+  usage: "&7Použití: &f/setspawnplus <reload|info>"

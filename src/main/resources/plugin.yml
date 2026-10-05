@@ -1,0 +1,50 @@
+name: SetSpawnPlus
+version: '${project.version}'
+main: cz.setspawnplus.SetSpawnPlugin
+api-version: '1.20'
+author: SetSpawnPlus
+description: Setspawn, firstspawn, respawn bez postele, delay, cooldown a další.
+
+commands:
+  spawn:
+    description: Teleport na spawn
+    usage: /spawn [hráč]
+  setspawn:
+    description: Nastaví hlavní spawn
+    usage: /setspawn
+  firstspawn:
+    description: Teleport na spawn pro nové hráče
+    usage: /firstspawn
+  setfirstspawn:
+    description: Nastaví spawn pro nové hráče
+    usage: /setfirstspawn
+  setspawnplus:
+    description: Správa pluginu
+    usage: /setspawnplus <reload|info>
+    aliases: [ssp]
+
+permissions:
+  setspawn.use:
+    description: Použití /spawn
+    default: true
+  setspawn.use.others:
+    description: Teleport jiných hráčů na spawn
+    default: op
+  setspawn.set:
+    description: Nastavení spawnu
+    default: op
+  setspawn.firstspawn.use:
+    description: Použití /firstspawn
+    default: op
+  setspawn.firstspawn.set:
+    description: Nastavení first spawnu
+    default: op
+  setspawn.reload:
+    description: Reload pluginu
+    default: op
+  setspawn.bypass.delay:
+    description: Ignoruje čekání před teleportem
+    default: op
+  setspawn.bypass.cooldown:
+    description: Ignoruje cooldown
+    default: op
